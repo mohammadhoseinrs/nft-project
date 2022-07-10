@@ -92,9 +92,18 @@ export default function Players() {
     <section className="players__container2">
       <div className="players__container__left">
         <div>
-      <Accordion>
+      <Accordion 
+      sx={{
+        color:'#fff',
+        backgroundColor:'#05092B'
+      }}
+      >
         <AccordionSummary 
-          expandIcon={<ExpandMoreIcon />}
+          expandIcon={<ExpandMoreIcon 
+            sx={{
+              color:'#fff',
+            }}
+            />}
           aria-controls="panel1a-content"
           id="panel1a-header"
         >
@@ -115,9 +124,18 @@ export default function Players() {
           </Typography>
         </AccordionDetails>
       </Accordion>
-      <Accordion>
+      <Accordion
+      sx={{
+        color:'#fff',
+        backgroundColor:'#05092B'
+      }}
+      >
         <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
+          expandIcon={<ExpandMoreIcon 
+            sx={{
+              color:'#fff',
+            }}
+            />}
           aria-controls="panel2a-content"
           id="panel2a-header"
         >
@@ -149,11 +167,23 @@ export default function Players() {
         </AccordionDetails>
       </Accordion>
     </div>
-    <Accordion>
+    <Accordion
+    sx={{
+      color:'#fff',
+      backgroundColor:'#05092B'
+    }}
+    >
         <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
+          expandIcon={<ExpandMoreIcon 
+            sx={{
+              color:'#fff',
+            }}
+             />}
           aria-controls="panel2a-content"
           id="panel2a-header"
+          sx={{
+            color:'#fff',
+          }}
         >
           <Typography>Collection</Typography>
         </AccordionSummary>
@@ -197,8 +227,19 @@ export default function Players() {
           ))}
         </div>
         <div className="players__container__right__bottom">
-          <Stack spacing={2}>
+          <Stack  sx={{
+            color:'#fff',
+          }}
+          spacing={2}>
             <Pagination
+            sx={{
+              '& .css-1pi9rcw-MuiButtonBase-root-MuiPaginationItem-root':{
+                color:'#fff'
+              },
+              '& .css-1v2lvtn-MuiPaginationItem-root':{
+                color:'#fff'
+              }
+            }}
               count={totalPage}
               shape="rounded"
               color="primary"

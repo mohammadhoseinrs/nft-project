@@ -20,13 +20,17 @@ export default function Home() {
     }
   },[user])
   const [DataTopPlayer, setDataTopPlayer] = useState([]);
-  useEffect(()=>{
-    setloading(true)
-    api.get(`api/players/layout_place/1`).then(res=>{
+  const fetchData=async()=>{
+     setloading(true)
+     await api.get(`api/players/layout_place/1`).then(res=>{
       setDataTopPlayer(res.data)
       setloading(false)
     })
+  }
+  useEffect(()=>{
+    fetchData()
   },[])
+  if (loading) return <Loading />;
 
 
 

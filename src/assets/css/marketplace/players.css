@@ -251,12 +251,7 @@
   align-items: center;
   justify-content: center;
 }
-.players__container__right__bottom
-  .css-1pi9rcw-MuiButtonBase-root-MuiPaginationItem-root,
-.css-1v2lvtn-MuiPaginationItem-root {
-  color: #fff !important;
-  color: white !important;
-}
+
 
 .players__container__right__top .buy_rent_btn {
   display: flex;
@@ -334,13 +329,8 @@
   opacity: 0.6;
   font-size: 14px !important;
 }
-.css-1elwnq4-MuiPaper-root-MuiAccordion-root{
-  background: #05092B !important;
-  color: #fff !important;
-}
-.css-yw020d-MuiAccordionSummary-expandIconWrapper svg {
-  color: #fff !important;
-}
+
+
 .accordian__search{
   position: relative;
   margin-bottom: 15px;

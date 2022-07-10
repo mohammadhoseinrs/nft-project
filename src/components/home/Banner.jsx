@@ -16,7 +16,7 @@ const HomeBanner = ({setOpenModal}) => {
             <div className="banner-shape shape-5"></div>
             <div className="banner-shape shape-6"></div>
             <div className="football__container">
-                <div className="banner-content wow fadeInLeft" data-wow-duration="1s" style={{ visibility: "visible", animationDuration: "1s", animationName: "fadeInLeft" }}>
+                <div className="banner-content wow fadeInLeft" data-wow-duration="1s" style={{ visibility: "visible", animationDuration: "1s", animationName: "left" }}>
                     <h1 className="title"><span className="text-theme d-block">i am</span> Robando kal</h1>
                     <div class="bid__btn-wrapper ">
                         <button type="button" class="bid__btn btn-info button__wrapper" data-bs-toggle="modal" data-bs-target="#bidmodal"
@@ -24,7 +24,7 @@ const HomeBanner = ({setOpenModal}) => {
                         >Register By Quiz</button>
                     </div>
                 </div>
-                <div className="banner-thumb wow fadeInUp" data-wow-delay=".5s" data-wow-duration="1s" style={{ visibility: "visible", animationDuration: "1s", animationDelay: "0.5s", animationName: "fadeInUp" }}>
+                <div className="banner-thumb wow fadeInLeft" data-wow-delay=".5s" data-wow-duration="1s" style={{ visibility: "visible", animationDuration: "1s", animationDelay: "0s", animationName: "top" }}>
                     <img width="90%" src={ball} alt="banner" />
                 </div>
             </div>

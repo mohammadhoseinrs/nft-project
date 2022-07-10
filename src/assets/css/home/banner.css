@@ -186,7 +186,10 @@
         transform: translateY(100%);
     }
 }
-
+.fadeInLeft{
+    animation-name: nama_utha;
+    animation-duration: 4s;
+}
 .banner-content {
     position: relative;
     max-width: 500px;
@@ -431,6 +434,24 @@
         -webkit-transform: translateY(15px) rotate(0deg);
         -ms-transform: translateY(15px) rotate(0deg);
         transform: translateY(15px) rotate(0deg);
+    }
+}
+@keyframes top {
+    0% {
+        transform: translateY(150px) rotate(0deg);
+    }
+    100%{
+        transform: translateY(0px) rotate(0deg);
+
+    }
+}
+@keyframes left {
+    0% {
+        transform: translateX(-150px) rotate(0deg);
+    }
+    100%{
+        transform: translateX(0px) rotate(0deg);
+
     }
 }
 
