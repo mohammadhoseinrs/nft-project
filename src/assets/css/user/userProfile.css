@@ -1,0 +1,52 @@
+.userprofile{
+    height: 100vh;
+}
+.page-title {
+    margin-bottom: 30px;
+    background: transparent;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 3rem;
+}
+.page-title-left{
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    width: 50%;
+}
+.page-title-right{
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    width: auto;
+}
+.page-title-left h3{
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+.page-title-left p{
+    margin-bottom: 0.5rem;
+    font-size: 14px;
+}
+.page-title-right{
+    display: flex;
+    align-items: center;
+}
+.page-title-right svg{
+    margin: 0 10px;
+}
+.page-title-right a , .page-title-right p{
+    color: #7184ad;
+    display: inline-block;
+    font-size: 14px;
+    text-decoration: none;
+}
+.page-title-right a {
+    cursor: pointer;
+    transition: 0.3s;
+}
+.page-title-right a:hover{
+    color: #fff;
+}

@@ -1,0 +1,35 @@
+
+.user__outlet{
+    margin-bottom: 50px;
+    background-color: #131129;
+    color: #fff;
+    max-width: 1400px;
+    margin: 0 auto;
+    margin-top: 90px;
+}
+.user__outlet2{
+    margin-bottom: 50px;
+    background-color: #131129;
+    color: #fff;
+    max-width: 1400px;
+    margin: 0 auto;
+    margin-top: 90px;
+}
+@media screen and (max-width:1600px){
+    .user__outlet , .user__outlet2{
+        max-width: 1400px;
+        margin: 0 auto;
+        margin-top: 90px;
+    }
+}
+@media screen and (max-width:1500px){
+.user__outlet{
+    margin-top: 90px;
+    margin-left: 80px;
+}
+.user__outlet2{
+    margin-top: 90px;
+    margin-left: 220px;
+
+}
+}
