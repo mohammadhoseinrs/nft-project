@@ -53,6 +53,8 @@ export default function Home() {
               leagueId={item.leagueId}
               themeId={item.themeId}
               position={item.position}
+              locked={item.locked}
+              price={item.price}
             />
           ))}
         </React.Fragment>

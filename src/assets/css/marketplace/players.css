@@ -9,6 +9,7 @@
   position: relative;
   box-shadow: 4px 5px 8px 2px rgb(0 0 0 / 20%),
     0px 1px 17px 1px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%) !important;
+    cursor: pointer;
 }
 .card-item .main {
   width: 100%;
@@ -183,6 +184,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 2rem 1rem;
+  flex-direction: column;
 }
 .buy_rent_btn__buy {
   background-color: transparent;
@@ -198,6 +200,8 @@
   background-color: #3771fe;
   cursor: pointer;
   transition: 0.2s;
+  width: 80%;
+  margin: 0 auto;
 }
 .buy_rent_btn__rent {
   background-color: transparent;
@@ -210,9 +214,16 @@
   border-radius: 100px;
   transition: 0.2s;
   cursor: pointer;
+  width: 100%;
 }
-.buy_rent_btn__rent:hover {
-  background-color: #3771fe !important;
+.cart__price{
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+.cart__price div{ 
+  margin-right: 3px;
+  line-height: 0;
 }
 .buy_rent_btn__buy:hover {
   background-color: transparent;
@@ -257,7 +268,14 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 2rem 0rem;
+  padding-bottom: 2rem;
+  padding-top: 1rem;
+}
+.players__container__right__top .buy_rent_btn__rent {
+  margin-top: 1rem;
+}
+.cart__price{
+  padding-bottom: 1rem;
 }
 .players__container__right__top .buy_rent_btn__rent,
 .players__container__right__top .buy_rent_btn__buy {
@@ -407,6 +425,31 @@
   color: #fff;
   opacity: 0.6;
   margin: 0 10px;
+}
+.car__hide{
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999;
+}
+.blur{
+  filter: blur(3px);
+  transition: all 0.4s ease;
+}
+.card-item:hover .blur{
+  filter: blur(0px);
+  cursor: pointer;
+}
+.filter__applying{
+  margin-top: 2rem;
+}
+.filter__applying button{
+  background-color: #3771fe;
+  border: none;
+  padding: 10px 25px;
+  color: #fff;
+  border-radius: 2px;
+  cursor: pointer;
 }
 @media screen and (max-width: 1025px) {
   .slick-slider .slick-list .slick-track .slick-slide {

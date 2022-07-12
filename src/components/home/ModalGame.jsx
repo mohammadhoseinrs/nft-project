@@ -16,6 +16,7 @@ import avatar1 from './../../assets/img/avatar1.jpeg'
 import avatar2 from './../../assets/img/avatar2.jpeg'
 import { Link } from "react-router-dom";
 
+
 const avatar=[
   {id:2,border:false,img:avatar1},
   {id:24,border:false,img:avatar2},
@@ -105,7 +106,7 @@ export default function ModalGame({ setOpenModal }) {
       setModalText2(false)
       const count = dataSteps.filter((value) => value.quiz === "true").length;
       setCountTrue(count);
-      if (count >= 9 && NumberQuestion==9) {
+      if (count >= 6 && NumberQuestion==9) {
         setModalText(false)
         setModalFinalAnswer(false);
         setModalTrueAnswer(true)
