@@ -1,4 +1,3 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import api from "../../api/api";
 import "./../../assets/css/marketplace/players.css";
@@ -14,14 +13,12 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import Checkbox from '@mui/material/Checkbox';
 import Slider from '@mui/material/Slider';
 import {BiSearch} from 'react-icons/bi'
-import FormGroup from '@mui/material/FormGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
-
+import { useParams, useSearchParams } from "react-router-dom";
 const override = css`
 display: block;
 margin: 0 auto;
@@ -33,6 +30,7 @@ function valuetext(value) {
   return `${value}°C`;
 }
 export default function Players() {
+  let [searchParams,setSearchParams]=useSearchParams()
   const [color, setColor] = useState("#525fe1");
   const [pageNumber, setPageNumber] = useState(1);
   const [pageNumber2, setPageNumber2] = useState(1);
@@ -48,6 +46,7 @@ export default function Players() {
   const [value, setValue] = React.useState([0, 100]);
   const [value2,setValue2]=useState()
   const [withoutFilter,setWithoutFilter]=useState(true)
+
   const handleChange = (event, newValue) => {
     console.log(newValue[0]);
     setValue(newValue);
@@ -55,6 +54,21 @@ export default function Players() {
   console.log(value);
 
   useEffect(() => {
+    if(searchParams.get('team') && searchParams.get('high') && searchParams.get('low') && searchParams.get('page')){
+      console.log('up');
+      setTotalPage('')
+     api.get(`api/players/filter/${searchParams.get('team')}/${searchParams.get('low')}/${searchParams.get('high')}?pageNumber=${searchParams.get('page')}&pageSize=10`).then(res=>{
+      console.log(res.data);
+      window.scrollTo(0, 0)
+      setDataPlayer(res.data.data);
+      setTotalPage2(res.data.totalPages)
+      api.get(`api/items/Players_Filter`).then(res=>{
+        setPlayerTeam(res.data.playerTeam)
+      })
+    })
+
+    }else{
+      console.log('down');
     setTotalPage2('')
     const fetchdata=async()=>{
     setLoading(true)
@@ -64,6 +78,7 @@ export default function Players() {
         setDataPlayer(res.data.data);
         setTotalPage(res.data.totalPages);
         setLoading(false);
+        setSearchParams(`pageMain=${pageNumber}`)
         setInitialize(true)
       });
       api.get(`api/items/Players_Filter`).then(res=>{
@@ -71,9 +86,24 @@ export default function Players() {
       })
     }
     fetchdata()
-    
-  }, []);
+  }
+  }, [pageNumber]);
+
   useEffect(()=>{
+    if(searchParams.get('team') && searchParams.get('high') && searchParams.get('low')){
+      console.log('up');
+      setTotalPage('')
+     api.get(`api/players/filter/${searchParams.get('team')}/${searchParams.get('low')}/${searchParams.get('high')}?pageNumber=${pageNumber2}&pageSize=10`).then(res=>{
+      console.log(res.data);
+      window.scrollTo(0, 0)
+      setDataPlayer(res.data.data);
+      setTotalPage2(res.data.totalPages)
+      api.get(`api/items/Players_Filter`).then(res=>{
+        setPlayerTeam(res.data.playerTeam)
+      })
+    })
+    }else{
+      console.log('down 2');
     setTotalPage2('')
     setDataLoading(true)
      api
@@ -82,9 +112,10 @@ export default function Players() {
       window.scrollTo(0, 0)
       setDataPlayer(res.data.data);
       setTotalPage(res.data.totalPages);
+      setSearchParams(`pageMain=${pageNumber}`)
       setDataLoading(false)
     });
-  
+    }
   },[pageNumber])
 
   const handleChange2 = (event) => {
@@ -96,12 +127,12 @@ export default function Players() {
       console.log(res.data);
       window.scrollTo(0, 0)
       setDataPlayer(res.data.data);
+      setSearchParams(`team=${value2}&low=${value[0]}&high=${value[1]}&page=${pageNumber2}`)
       setTotalPage2(res.data.totalPages)
     })
   }
-  useEffect(()=>{
-    filterHandler()
-  },[pageNumber2])
+ 
+  
 
   
  
@@ -109,7 +140,9 @@ export default function Players() {
     setPageNumber(pageNumber);
   }
   function pageChangeHandler2(event, pageNumber) {
+    console.log(pageNumber);
     setPageNumber2(pageNumber);
+    filterHandler()
   }
   
   if(dataLoading && initilaize) return (
@@ -236,7 +269,10 @@ export default function Players() {
       </Accordion>
         <div className="filter__applying">
           <button onClick={filterHandler}>
-          Apply Filter
+          Apply Filters
+          </button>
+          <button className="">
+            Reser Filters
           </button>
         </div>
       </div>

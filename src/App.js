@@ -60,7 +60,14 @@ function App() {
       cacheProvider: true, // very important
       network: "rinkeby",
       providerOptions,
-      theme: "dark",
+      theme: {
+        background: "rgb(39, 49, 56)",
+        main: "rgb(199, 199, 199)",
+        secondary: "rgb(136, 136, 136)",
+        border: "rgba(195, 195, 195, 0.14)",
+        hover: "rgb(16, 26, 32)",
+        position:'relative',
+      }
     });
 
     setWeb3Modal(newWeb3Modal);
@@ -79,6 +86,7 @@ function App() {
       setNetworkId(1)
     }
     provider.on("disconnect", (code, reason) => {
+      window.location.reload()
       console.log(code,reason);
     });
     const networkid = await ethersProvider.getNetwork();

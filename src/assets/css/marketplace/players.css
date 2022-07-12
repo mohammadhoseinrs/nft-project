@@ -1,7 +1,4 @@
-.css-1633um2-MuiPaper-root {
-  background-color: inherit !important;
-  line-height: 0 !important;
-}
+
 .card-item {
   padding: 0 !important;
   border-radius: 10px !important;
@@ -134,7 +131,7 @@
   font-size: 13px;
   font-weight: bold;
   font-family: inherit !important;
-  z-index: 3;
+  z-index: 2;
 }
 .card-item span,
 .card-item h1,
@@ -190,13 +187,13 @@
   background-color: transparent;
   border: 2px solid hsla(0, 0%, 100%, 0.1);
   display: inline-block;
-  padding: 8px 30px;
+  padding: 6px 30px;
   color: #fff;
   text-align: center;
   font-weight: 600;
   font-size: 13px;
   border: 2px solid #3771fe;
-  border-radius: 100px;
+  border-radius: 20px;
   background-color: #3771fe;
   cursor: pointer;
   transition: 0.2s;
@@ -430,7 +427,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 999;
+  z-index: 2;
 }
 .blur{
   filter: blur(3px);
@@ -442,6 +439,9 @@
 }
 .filter__applying{
   margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .filter__applying button{
   background-color: #3771fe;
@@ -450,6 +450,69 @@
   color: #fff;
   border-radius: 2px;
   cursor: pointer;
+}
+.spinner{
+  width: 40px;
+  height: 40px;
+  position: relative;
+  margin: 100px auto;
+}
+.double-bounce1 {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #1066e7;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: sk-bounce 2.0s infinite ease-in-out;
+}
+.double-bounce2{
+  width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #1066e7;
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: sk-bounce 2.0s infinite ease-in-out;
+}
+.loader__14{
+  width: 48px;
+    height: 48px;
+    display: inline-block;
+    position: relative;
+}
+.loader__14::after{
+  content: "";
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 2px solid #FFF;
+    position: absolute;
+    left: 0;
+    top: 0;
+    -webkit-animation: animloader14 2s linear infinite;
+    animation: animloader14 2s linear infinite;
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
+}
+.loader__14::before {
+  content: "";
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid #FFF;
+  position: absolute;
+  left: 0;
+  top: 0;
+  -webkit-animation: animloader14 2s linear infinite;
+  animation: animloader14 2s linear infinite;
+}
+.loader{
+  padding: 4rem;
 }
 @media screen and (max-width: 1025px) {
   .slick-slider .slick-list .slick-track .slick-slide {

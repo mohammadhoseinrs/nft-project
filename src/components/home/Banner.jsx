@@ -2,7 +2,7 @@ import React from "react";
 import '../../assets/css/home/banner.css';
 
 import banner from './../../assets/img/home/banner-bg.jpeg'
-import ball from './../../assets/img/home/banner-ball.png'
+import maradona from './../../assets/img/home/maradona.svg'
 import sign from './../../assets/img/logo/sign.png'
 
 
@@ -25,7 +25,7 @@ const HomeBanner = ({setOpenModal}) => {
                     </div>
                 </div>
                 <div className="banner-thumb wow fadeInLeft" data-wow-delay=".5s" data-wow-duration="1s" style={{ visibility: "visible", animationDuration: "1s", animationDelay: "0s", animationName: "top" }}>
-                    <img width="90%" src={ball} alt="banner" />
+                    <img width="100%" src={maradona} alt="banner" />
                 </div>
             </div>
         </section>

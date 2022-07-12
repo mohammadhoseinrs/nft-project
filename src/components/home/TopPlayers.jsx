@@ -4,11 +4,11 @@ import { styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
 import './../../assets/css/marketplace/players.css';
 import imageURL from "../../api/imageApi";
-import lock from './../../assets/img/lockfade3white.png'
+import lock from './../../assets/img/lockfade4white.png'
 import {IoLogoUsd} from 'react-icons/io'
 import ImageLoader from 'react-load-image';
-import loading from './../../assets/img/loading2.gif'
-
+import loading from './../../assets/img/Ripple2.gif'
+import NOimage from './../../assets/img/blankface.png'
 export default function TopPlayers(props) {
   const [imageUrl, setImageUrl] = useState(imageURL);
   const Item = styled(Paper)(({ theme }) => ({
@@ -25,7 +25,7 @@ export default function TopPlayers(props) {
       return a + b;
     }
     const FormatFullname = (bb) => {
-      let fullname = bb.fullname.toString().replace(' ', '-');
+      let fullname = bb.fullname?.toString().replace(' ', '-');
       fullname = fullname.split('-');
       if (fullname.length == 1) {
         return (
@@ -51,12 +51,12 @@ export default function TopPlayers(props) {
       )
     }
     function Preloader(props) {
-      return <img src={loading} />;
+      return <img className="loader" src={loading} />
     }
     return (
       
-      <Grid item xs={6} sm={4} md={3} lg={3} >
-        <Item className='card-item' style={{ textAlign: "center" }}>
+      <Grid item xs={6} sm={4} md={3} lg={3}>
+        <Item className='card-item' style={{ textAlign: "center" , lineHeight:'0px',backgroundColor:'inherit' }} >
           {props.locked &&  <img src={lock} className='car__hide' alt="" /> }
           <img src={`${imageUrl}/assets/img/marketplace/bg/s-${props.themeId}/600-900.jpg`} className={mapingString('main color-', props.styleId)} />
           <img src={`${imageUrl}/assets/img/marketplace/league/${props.leagueId}.png`} className='logo-top-right' />
@@ -65,8 +65,8 @@ export default function TopPlayers(props) {
             src={`${imageUrl}/assets/img/marketplace/player/${props.id}.png`}
             className={`player ${props.locked && 'blur'}`} 
             >
-<img />
-    <div>Error!</div>
+      <img />
+      <img src={NOimage} alt="" />
     <Preloader />
             </ImageLoader>
             </div>

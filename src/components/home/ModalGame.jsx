@@ -14,12 +14,20 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import avatar1 from './../../assets/img/avatar1.jpeg'
 import avatar2 from './../../assets/img/avatar2.jpeg'
-import { Link } from "react-router-dom";
+import avatar3 from './../../assets/img/avatar3.jpeg'
+import avatar4 from './../../assets/img/avatar4.jpeg'
+import avatar5 from './../../assets/img/avatar5.jpeg'
 
+import { Link } from "react-router-dom";
+import ImageLoader from 'react-load-image';
+import ripple from './../../assets/img/Ripple2.gif'
 
 const avatar=[
   {id:2,border:false,img:avatar1},
   {id:24,border:false,img:avatar2},
+  {id:11,border:false,img:avatar3},
+  {id:8,border:false,img:avatar4},
+  {id:98,border:false,img:avatar5},
 ]
 
 export default function ModalGame({ setOpenModal }) {
@@ -53,7 +61,9 @@ export default function ModalGame({ setOpenModal }) {
   const [err,setErr]=useState('')
   const [show1,setshow1]=useState(false)
 
-  
+  function Preloader(props) {
+    return <img className="loader" src={loading} />
+  }
 
   let items1 = dataStep[NumberQuestion];
   let items2 = dataStep[NumberQuestion + 1];

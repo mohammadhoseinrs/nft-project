@@ -18,7 +18,7 @@ const settings = {
   infinite: true,
   autoplay: true,
   speed: 2000,
-  autoplaySpeed: 2000,
+  autoplaySpeed: 5000,
   slidesToShow: response(),
   slidesToScroll: response2(),
   responsive: [

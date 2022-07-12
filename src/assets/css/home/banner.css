@@ -257,11 +257,14 @@
     color: #08d565;
 }
 
+.banner-thumb img{
+    width: 120% !important;
+}
 @media (min-width: 992px) {
     .banner-thumb {
         position: absolute;
         top: 15px;
-        left: calc(50% - 9px);
+        left: calc(58% - 9px);
     }
 }
 

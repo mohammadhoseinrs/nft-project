@@ -413,7 +413,7 @@
   left: 50%;
   transform: translate(-50%, 0);
   z-index: 2;
-  width: 580px;
+  width: 630px;
   height: 520px;
   padding: 35px;
   background-color: #f2f2fa;
@@ -664,6 +664,7 @@
     align-items: center;
     justify-content: space-between;
     margin: 3rem 0;
+    flex-wrap: wrap;
   }
   .modaltrueanswer__input__avatar__1 ,.modaltrueanswer__input__avatar__2{
     width: 100px;
